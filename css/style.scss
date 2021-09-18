@@ -1,0 +1,134 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
+
+$altura: 70vh;
+$sombra: #ccc;
+$borderRadius: 50px;
+
+@mixin paddingLeft {
+    padding-left: 100px;
+}
+
+body, html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+@keyframes anima {
+    to {
+        transform: initial
+    }
+}
+
+.container {
+    width: 70%;
+    border-radius: $borderRadius;
+    box-shadow: 0px 10px 30px $sombra;
+    overflow: hidden;
+    .box-general {
+        display: flex;
+        min-height: $altura;
+        .box:nth-child(1){
+            color: #fff;
+            flex: 2;
+            .logo {
+                color: #fff;
+                padding-top: 30px;
+                @include paddingLeft;
+                position: absolute;
+                font-size: 20px;
+                z-index: 2;
+            }
+            .full-banner {
+                position: relative;
+                border-radius: 0 $borderRadius $borderRadius 0;
+                overflow: hidden;
+                .slide-main {
+                    display: flex;
+                    height: $altura;
+                    .slide-item {
+                        display: flex;
+                        justify-content: end;
+                        padding-bottom: 100px;
+                        height: $altura;
+                        flex-direction: column;
+                        background-image: url(https://images.pexels.com/photos/189349/pexels-photo-189349.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+                        background-size: cover;
+                        .text {
+                            padding-right: 240px;
+                            h1 {
+                                color: #fff;
+                                @include paddingLeft;
+                                justify-content: end;
+                                align-items: baseline;
+                                font-size: 37px;
+                                margin-bottom: 10px;
+                            }
+                            p {
+                                @include paddingLeft;
+                                font-size: 14px;
+                                padding-right: 0px;
+                                font-weight: 300;
+                            }
+                            .btn {
+                                @include paddingLeft;
+                                margin-top: 20px;
+                                a {
+                                    display: inline-block;
+                                    background: orange;
+                                    text-decoration: none;
+                                    color: #fff;
+                                    font-size: 16px;
+                                    padding: 10px 25px;
+                                    border-radius: 5px;
+                                }
+                            }
+                        }
+                    }
+                }
+                .control {
+                    position: absolute;
+                    bottom: 40px;
+                    z-index: 3;
+                    left: 100px;
+                    display: flex;
+                    align-items: center;
+                    .line {
+                        width: 250px;
+                        height: 4px;
+                        background: rgba(255,255,255,.5);
+                        margin-right: 20px;
+                        border-radius: 3px;
+                        position: relative;
+                        overflow: hidden;
+                        &.active{
+                            &::after {
+                                content: "";
+                                width: 30%;
+                                background: #fff;
+                                position: absolute;
+                                height: inherit;
+                                transform: translateX(-100%);
+                                animation: anima 1s linear forwards;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .box:nth-child(2) {
+            flex: 1;
+        }
+    }
+}
