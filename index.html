@@ -41,11 +41,165 @@
             </div>
             <div class="box">
                 <header>
-                    <div class="user">awef</div>
-                    <div class="nav"></div>
+                    <div class="user">
+                        <div class="name">Gabriela Paz</div>
+                        <div class="image">
+                            <img src="https://images.pexels.com/photos/2787341/pexels-photo-2787341.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Gabriela Paz">
+                        </div>
+                    </div>
+                    <div class="nav">
+                        <div class="box-menu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
                 </header>
+                
+                <div id="busca">
+                    <div class="box">
+                        <input type="text" placeholder="Search destinations here ...">
+                    </div>
+                </div>
+
+                <section class="destinations">
+
+                    <h2>
+                        Discover for yourself new
+                    </h2>
+
+                    <ul>
+                        <li><a href="" class="active">Places</a></li>
+                        <li><a href="">Experience</a></li>
+                        <li><a href="">Adventures</a></li>
+                    </ul>
+
+                    <div class="list">
+                        <div class="box-list">
+                            <div class="list-wrapper">
+
+                                <div class="list-item">
+                                    <div class="image">
+                                        <img src="https://images.pexels.com/photos/1563256/pexels-photo-1563256.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
+                                    </div>
+                                    <div class="name">
+                                        Dubai
+                                    </div>
+                                    <div class="info">
+                                        <p>
+                                            lorem lorem
+                                        </p>
+                                    </div>
+                                    <div class="btn">
+                                        <a href="#">Explore</a>
+                                    </div>
+                                </div>
+
+                                <div class="list-item">
+                                    <div class="image">
+                                        <img src="https://images.pexels.com/photos/1563256/pexels-photo-1563256.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
+                                    </div>
+                                    <div class="name">
+                                        Dubai
+                                    </div>
+                                    <div class="info">
+                                        <p>
+                                            lorem lorem
+                                        </p>
+                                    </div>
+                                    <div class="btn">
+                                        <a href="#">Explore</a>
+                                    </div>
+                                </div>
+
+                                <div class="list-item">
+                                    <div class="image">
+                                        <img src="https://images.pexels.com/photos/1563256/pexels-photo-1563256.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
+                                    </div>
+                                    <div class="name">
+                                        Dubai
+                                    </div>
+                                    <div class="info">
+                                        <p>
+                                            lorem lorem
+                                        </p>
+                                    </div>
+                                    <div class="btn">
+                                        <a href="#">Explore</a>
+                                    </div>
+                                </div>
+
+                                <div class="list-item">
+                                    <div class="image">
+                                        <img src="https://images.pexels.com/photos/1563256/pexels-photo-1563256.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
+                                    </div>
+                                    <div class="name">
+                                        Dubai
+                                    </div>
+                                    <div class="info">
+                                        <p>
+                                            lorem lorem
+                                        </p>
+                                    </div>
+                                    <div class="btn">
+                                        <a href="#">Explore</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="controls-list">
+                            <a href="#" id="prev">prev</a>
+                            <a href="#" id="next">next</a>
+                        </div>
+                    </div>
+
+                </section>
+
             </div>
         </div>
     </div>
+
+    <script>
+        let listWrapper = document.querySelector('.list-wrapper')
+        let listItem = document.querySelectorAll('.list-item')
+        let prevBtn  = document.querySelector('#prev')
+        let nextBtn = document.querySelector('#next')
+        let valorSlide = 0;
+        const listITemWidth = listItem[0].offsetWidth
+        const plusSize = 20;
+        let listWrapperWidth = ( (listITemWidth + plusSize ) * listItem.length)
+
+
+        function next(e){
+            e.preventDefault();
+            valorSlide += listITemWidth + plusSize
+
+            if(valorSlide <= (listWrapperWidth - listITemWidth * 2) ) {
+                listWrapper.style.marginLeft = -valorSlide + 'px'
+            } else {
+                listWrapper.style.marginLeft = 0
+                valorSlide = 0
+            }
+        }
+
+        function prev(e){
+            e.preventDefault();
+            if(valorSlide > 0) {
+                valorSlide -= listITemWidth + plusSize
+                listWrapper.style.marginLeft = -valorSlide + 'px'
+            }
+
+        }
+
+        function init(){
+            listWrapper.style.width = listWrapperWidth + 'px';
+            nextBtn.addEventListener('click', next)
+            prevBtn.addEventListener('click', prev)
+        }
+
+        init()
+
+    </script>
 </body>
 </html>

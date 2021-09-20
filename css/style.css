@@ -119,6 +119,130 @@ body {
 }
 .container .box-general .box:nth-child(2) {
   flex: 1;
+  padding: 50px 0 0;
+}
+.container .box-general .box:nth-child(2) header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  padding: 0 40px;
+}
+.container .box-general .box:nth-child(2) header .user {
+  display: flex;
+  align-items: center;
+}
+.container .box-general .box:nth-child(2) header .user .name {
+  font-weight: bold;
+  margin-right: 10px;
+}
+.container .box-general .box:nth-child(2) header .user .image img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  object-fit: cover;
+}
+.container .box-general .box:nth-child(2) header .nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: end;
+  cursor: pointer;
+}
+.container .box-general .box:nth-child(2) header .nav span {
+  height: 4px;
+  background: #000;
+  display: block;
+  width: 30px;
+  margin-bottom: 5px;
+}
+.container .box-general .box:nth-child(2) header .nav span:nth-child(2) {
+  background-image: linear-gradient(to right, #fff 30%, black 30%);
+}
+.container .box-general .box:nth-child(2) header .nav span:nth-child(3) {
+  background-image: linear-gradient(to right, #fff 70%, black 70%);
+}
+.container .box-general .box:nth-child(2) #busca {
+  padding: 0 40px;
+  margin-bottom: 40px;
+}
+.container .box-general .box:nth-child(2) #busca input {
+  background: #eeeeee;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+  padding: 0 10px;
+}
+.container .box-general .box:nth-child(2) .destinations h2 {
+  margin-bottom: 20px;
+  padding: 0 40px;
+}
+.container .box-general .box:nth-child(2) .destinations ul {
+  list-style: none;
+  display: flex;
+  margin: 10px 0 30px;
+  padding: 0 40px;
+}
+.container .box-general .box:nth-child(2) .destinations ul li {
+  padding-right: 15px;
+}
+.container .box-general .box:nth-child(2) .destinations ul li a {
+  text-decoration: none;
+  color: #7c7c7c;
+}
+.container .box-general .box:nth-child(2) .destinations ul li a.active {
+  color: #000;
+}
+.container .box-general .box:nth-child(2) .destinations .list {
+  margin-left: 40px;
+}
+.container .box-general .box:nth-child(2) .destinations .list .box-list {
+  overflow: hidden;
+  width: 408px;
+}
+.container .box-general .box:nth-child(2) .destinations .list .box-list .list-wrapper {
+  transition: 0.3s;
+}
+.container .box-general .box:nth-child(2) .destinations .list .box-list .list-wrapper .list-item {
+  width: 170px;
+  overflow: hidden;
+  border: 1px #e4e4e4 solid;
+  padding: 4px;
+  border-radius: 5px;
+  float: left;
+  margin-right: 20px;
+}
+.container .box-general .box:nth-child(2) .destinations .list .box-list .list-wrapper .list-item img {
+  width: 100%;
+  object-fit: cover;
+  height: 150px;
+  border-radius: 4px;
+}
+.container .box-general .box:nth-child(2) .destinations .list .box-list .list-wrapper .list-item .name {
+  font-weight: bold;
+  font-size: 16px;
+  margin: 5px 0;
+}
+.container .box-general .box:nth-child(2) .destinations .list .box-list .list-wrapper .list-item .info {
+  font-size: 12px;
+}
+.container .box-general .box:nth-child(2) .destinations .list .box-list .list-wrapper .list-item .info p {
+  margin: 0;
+  padding: 0;
+}
+.container .box-general .box:nth-child(2) .destinations .list .box-list .list-wrapper .list-item .btn {
+  margin-top: 10px;
+}
+.container .box-general .box:nth-child(2) .destinations .list .box-list .list-wrapper .list-item .btn a {
+  display: block;
+  background: #b26953;
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 25px;
+  border-radius: 5px;
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */

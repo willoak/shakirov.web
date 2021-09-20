@@ -13,6 +13,9 @@ $borderRadius: 50px;
 @mixin paddingLeft {
     padding-left: 100px;
 }
+@mixin paddingLR {
+    padding: 0 40px;
+}
 
 body, html {
     height: 100%;
@@ -129,6 +132,135 @@ body {
         }
         .box:nth-child(2) {
             flex: 1;
+            padding: 50px 0 0;
+            header {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 40px;
+                @include paddingLR;
+                .user {
+                    display: flex;
+                    align-items: center;
+                    .name {
+                        font-weight: bold;
+                        margin-right: 10px;
+                    }
+                    .image {
+                        img {
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                            overflow: hidden;
+                            object-fit: cover;
+                        }
+                    }
+                }
+                .nav {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content:end;
+                    cursor: pointer;
+                    span {
+                        height: 4px;
+                        background: #000;
+                        display: block;
+                        width: 30px;
+                        margin-bottom: 5px;
+                        &:nth-child(2) {
+                            background-image: linear-gradient(to right, #fff 30%, black 30%);
+                        }
+                        &:nth-child(3) {
+                            background-image: linear-gradient(to right, #fff 70%, black 70%);
+                        }
+                    }
+                }
+            }
+            #busca {
+                @include paddingLR;
+                margin-bottom: 40px;
+                input {
+                    background: rgb(238, 238, 238);
+                    height: 40px;
+                    border-radius: 5px;
+                    border: none;
+                    width: 100%;
+                    padding: 0 10px;
+                }
+            }
+
+            .destinations {
+                h2 {
+                    margin-bottom: 20px;
+                    @include paddingLR;
+                }
+                ul {
+                    list-style: none;
+                    display: flex;
+                    margin: 10px 0 30px;
+                    @include paddingLR;
+                    li {
+                        padding-right: 15px;
+                        a {
+                            text-decoration: none;
+                            color: rgb(124, 124, 124);
+                            &.active {
+                                color: #000;
+                            }
+                        }
+                    }
+                }
+                .list {
+                    margin-left: 40px;
+                    .box-list {
+                        overflow: hidden;
+                        width: 408px;
+                        .list-wrapper {
+                            transition: .3s;
+                            .list-item {
+                                width: 170px;
+                                overflow: hidden;
+                                border: 1px #e4e4e4 solid;
+                                padding: 4px;
+                                border-radius: 5px;
+                                float: left;
+                                margin-right: 20px;
+                                img {
+                                    width: 100%;
+                                    object-fit: cover;
+                                    height: 150px;
+                                    border-radius: 4px;
+                                }
+                                .name {
+                                    font-weight: bold;
+                                    font-size: 16px;
+                                    margin: 5px 0;
+                                }
+                                .info {
+                                    font-size: 12px;
+                                    p {
+                                        margin: 0;
+                                        padding:0;
+                                    }
+                                }
+                                .btn {
+                                    margin-top: 10px;
+                                    a {
+                                        display: block;
+                                        background: #b26953;
+                                        text-decoration: none;
+                                        color: #fff;
+                                        font-size: 16px;
+                                        padding: 10px 25px;
+                                        border-radius: 5px;
+                                        text-align: center;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
