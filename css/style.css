@@ -212,6 +212,8 @@ body {
   border-radius: 5px;
   float: left;
   margin-right: 20px;
+  transition: 0.5s ease-in;
+  transform: scale(0.93);
 }
 .container .box-general .box:nth-child(2) .destinations .list .box-list .list-wrapper .list-item img {
   width: 100%;
@@ -247,11 +249,12 @@ body {
 .container .box-general .box:nth-child(2) .destinations .list .box-list .list-wrapper .list-item.active {
   border-color: #ffa500;
   box-shadow: 0 0 10px #ffa50059;
+  transform: scale(1);
 }
 .container .box-general .box:nth-child(2) .destinations .list .controls-list {
   margin-top: 10px;
 }
-.container .box-general .box:nth-child(2) .destinations .list .controls-list a {
+.container .box-general .box:nth-child(2) .destinations .list .controls-list button {
   display: inline-block;
   padding: 7px 15px;
   color: #fff;
@@ -259,8 +262,10 @@ body {
   text-decoration: none;
   font-size: 12px;
   border-radius: 4px;
+  border: none;
+  cursor: pointer;
 }
-.container .box-general .box:nth-child(2) .destinations .list .controls-list a:hover {
+.container .box-general .box:nth-child(2) .destinations .list .controls-list button:hover {
   background: #db8f00;
 }
 
