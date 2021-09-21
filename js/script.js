@@ -45,3 +45,14 @@ function init(){
 }
 
 init()
+
+// slider Principal
+
+const fullSlideMain = document.querySelector('.slide-main')
+const fullSlideMainItem = fullSlideMain.querySelectorAll('.slide-item')
+const fullSldeMainControlActive = document.querySelector('#full-slide-active')
+const fullSldeMainControlTotal = document.querySelector('#full-slide-total')
+
+
+fullSldeMainControlActive.innerHTML = '01'
+fullSldeMainControlTotal.innerHTML = '0' + fullSlideMainItem.length 
