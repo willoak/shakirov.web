@@ -244,5 +244,24 @@ body {
   border-radius: 5px;
   text-align: center;
 }
+.container .box-general .box:nth-child(2) .destinations .list .box-list .list-wrapper .list-item.active {
+  border-color: #ffa500;
+  box-shadow: 0 0 10px #ffa50059;
+}
+.container .box-general .box:nth-child(2) .destinations .list .controls-list {
+  margin-top: 10px;
+}
+.container .box-general .box:nth-child(2) .destinations .list .controls-list a {
+  display: inline-block;
+  padding: 7px 15px;
+  color: #fff;
+  background: #ffa500;
+  text-decoration: none;
+  font-size: 12px;
+  border-radius: 4px;
+}
+.container .box-general .box:nth-child(2) .destinations .list .controls-list a:hover {
+  background: #db8f00;
+}
 
 /*# sourceMappingURL=style.css.map */
