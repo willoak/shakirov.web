@@ -67,18 +67,22 @@ function nextFullSlide(){
         controlFullSlide++
         fullSldeMainLine[controlFullSlide].classList.add('active')
         fullSlideMainItem[controlFullSlide].classList.add('active')
-        fullSldeMainControlActive.innerHTML = controlFullSlide + 1
+        fullSldeMainControlActive.innerHTML = returnZeroNumber(controlFullSlide + 1)
     } else {
         controlFullSlide = 0
         fullSlideMainItem[0].classList.add('active')
-        fullSldeMainControlActive.innerHTML = 1
+        fullSldeMainControlActive.innerHTML = returnZeroNumber(1)
         fullSldeMainLine[0].classList.add('active')
     }
 }
 
+function returnZeroNumber (n) {
+    return ("00" + n ).slice(-2)
+}
+
 function initFullSlide (){
-    fullSldeMainControlActive.innerHTML = 1
-    fullSldeMainControlTotal.innerHTML = fullSlideMainItem.length 
+    fullSldeMainControlActive.innerHTML = returnZeroNumber('1')
+    fullSldeMainControlTotal.innerHTML = returnZeroNumber(fullSlideMainItem.length)
     fullSlideMainItem[0].classList.add('active')
     fullSldeMainLine[0].classList.add('active')
     changeFullSlide()
