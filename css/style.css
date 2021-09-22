@@ -91,7 +91,7 @@ body {
 }
 .container .box-general .box:nth-child(1) .full-banner .slide-main .slide-item .text .btn a {
   display: inline-block;
-  background: orange;
+  background: #ffa500;
   text-decoration: none;
   color: #fff;
   font-size: 16px;
@@ -148,6 +148,7 @@ body {
 .container .box-general .box:nth-child(2) header .user {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 .container .box-general .box:nth-child(2) header .user .name {
   font-weight: bold;
@@ -159,6 +160,12 @@ body {
   border-radius: 50%;
   overflow: hidden;
   object-fit: cover;
+}
+.container .box-general .box:nth-child(2) header .user:hover .name {
+  color: #ffa500;
+}
+.container .box-general .box:nth-child(2) header .user:hover .image img {
+  border: 2px #ffa500 solid;
 }
 .container .box-general .box:nth-child(2) header .nav {
   display: flex;
@@ -208,9 +215,10 @@ body {
   border: none;
   background: #eeeeee;
   color: #000;
-  padding: 0 25px;
+  padding: 0 15px;
   font-size: 20px;
   border-radius: 0 4px 4px 0;
+  cursor: pointer;
 }
 .container .box-general .box:nth-child(2) .destinations h2 {
   margin-bottom: 20px;

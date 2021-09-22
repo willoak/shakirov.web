@@ -10,6 +10,7 @@ $altura: 70vh;
 $sombra: #ccc;
 $borderRadius: 50px;
 $branco: #fff;
+$laranja: #ffa500;
 
 @mixin paddingLeft {
     padding-left: 100px;
@@ -97,7 +98,7 @@ body {
                                 margin-top: 20px;
                                 a {
                                     display: inline-block;
-                                    background: orange;
+                                    background: $laranja;
                                     text-decoration: none;
                                     color: $branco;
                                     font-size: 16px;
@@ -160,6 +161,7 @@ body {
                 .user {
                     display: flex;
                     align-items: center;
+                    cursor: pointer;
                     .name {
                         font-weight: bold;
                         margin-right: 10px;
@@ -171,6 +173,16 @@ body {
                             border-radius: 50%;
                             overflow: hidden;
                             object-fit: cover;
+                        }
+                    }
+                    &:hover {
+                        .name {
+                            color: $laranja
+                        }
+                        .image {
+                            img {
+                                border: 2px $laranja solid
+                            }
                         }
                     }
                 }
@@ -221,9 +233,10 @@ body {
                         border: none;
                         background: rgb(238, 238, 238);
                         color: #000;
-                        padding: 0 25px;
+                        padding: 0 15px;
                         font-size: 20px;
                         border-radius: 0 4px 4px 0;
+                        cursor: pointer;
                     }
                 }
             }
@@ -298,7 +311,7 @@ body {
                                     }
                                 }
                                 &.active {
-                                    border-color: #ffa500;
+                                    border-color: $laranja;
                                     box-shadow: 0 0 10px #ffa50059;
                                     transform: scale(1)
                                 }
