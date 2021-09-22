@@ -9,6 +9,7 @@
 $altura: 70vh;
 $sombra: #ccc;
 $borderRadius: 50px;
+$branco: #fff;
 
 @mixin paddingLeft {
     padding-left: 100px;
@@ -33,6 +34,11 @@ body {
         transform: initial
     }
 }
+@keyframes fade {
+    to {
+        opacity: 1
+    }
+}
 
 .container {
     width: 70%;
@@ -43,10 +49,10 @@ body {
         display: flex;
         min-height: $altura;
         .box:nth-child(1){
-            color: #fff;
+            color: $branco;
             flex: 2;
             .logo {
-                color: #fff;
+                color: $branco;
                 padding-top: 30px;
                 @include paddingLeft;
                 position: absolute;
@@ -60,18 +66,20 @@ body {
                 .slide-main {
                     display: flex;
                     height: $altura;
+                    background-color: #000;
                     .slide-item {
                         display: none;
                         justify-content: end;
                         padding-bottom: 100px;
                         height: $altura;
                         flex-direction: column;
-                        background-image: url(https://images.pexels.com/photos/189349/pexels-photo-189349.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
                         background-size: cover;
+                        transition: ease-in 1s;
+                        opacity: 0;
                         .text {
                             padding-right: 240px;
                             h1 {
-                                color: #fff;
+                                color: $branco;
                                 @include paddingLeft;
                                 justify-content: end;
                                 align-items: baseline;
@@ -91,7 +99,7 @@ body {
                                     display: inline-block;
                                     background: orange;
                                     text-decoration: none;
-                                    color: #fff;
+                                    color: $branco;
                                     font-size: 16px;
                                     padding: 10px 25px;
                                     border-radius: 5px;
@@ -100,6 +108,7 @@ body {
                         }
                         &.active {
                             display: flex;
+                            animation: fade .3s linear forwards;
                         }
                     }
                 }
@@ -118,15 +127,17 @@ body {
                         border-radius: 3px;
                         position: relative;
                         overflow: hidden;
+                        display: none;
                         &.active{
+                            display: block;
                             &::after {
                                 content: "";
-                                width: 30%;
-                                background: #fff;
+                                width: 100%;
+                                background: $branco;
                                 position: absolute;
                                 height: inherit;
                                 transform: translateX(-100%);
-                                animation: anima 1s linear forwards;
+                                animation: anima 5s linear forwards;
                             }
                         }
                     }
@@ -176,10 +187,10 @@ body {
                         width: 30px;
                         margin-bottom: 5px;
                         &:nth-child(2) {
-                            background-image: linear-gradient(to right, #fff 30%, black 30%);
+                            background-image: linear-gradient(to right, $branco 30%, black 30%);
                         }
                         &:nth-child(3) {
-                            background-image: linear-gradient(to right, #fff 70%, black 70%);
+                            background-image: linear-gradient(to right, $branco 70%, black 70%);
                         }
                     }
                 }
@@ -187,13 +198,33 @@ body {
             #busca {
                 @include paddingLR;
                 margin-bottom: 40px;
-                input {
-                    background: rgb(238, 238, 238);
-                    height: 40px;
-                    border-radius: 5px;
-                    border: none;
+                .input {
+                    display: flex;
                     width: 100%;
-                    padding: 0 10px;
+                    position: relative;
+                    flex-wrap: wrap;
+                    align-items: stretch;
+                    input {
+                        background: rgb(238, 238, 238);
+                        height: 40px;
+                        border-radius: 5px;
+                        border: none;
+                        padding: 0 10px;
+                        position: relative;
+                        flex: 1 1 auto;
+                        width: 1%;
+                        min-width: 0;
+                        outline: none;
+                    }
+                    button {
+                        height: 40px;
+                        border: none;
+                        background: rgb(238, 238, 238);
+                        color: #000;
+                        padding: 0 25px;
+                        font-size: 20px;
+                        border-radius: 0 4px 4px 0;
+                    }
                 }
             }
 
@@ -259,7 +290,7 @@ body {
                                         display: block;
                                         background: #b26953;
                                         text-decoration: none;
-                                        color: #fff;
+                                        color: $branco;
                                         font-size: 16px;
                                         padding: 10px 25px;
                                         border-radius: 5px;
@@ -279,7 +310,7 @@ body {
                         button {
                             display: inline-block;
                             padding: 7px 15px;
-                            color: #fff;
+                            color: $branco;
                             background: #ffa500;
                             text-decoration: none;
                             font-size: 12px;

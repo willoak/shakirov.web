@@ -8,7 +8,6 @@ const listITemWidth = listItem[0].offsetWidth
 const plusSize = 20;
 let listWrapperWidth = ((listITemWidth + plusSize ) * listItem.length)
 
-
 function next(){
     valorSlide += listITemWidth + plusSize
     if(valorSlide <= (listWrapperWidth - listITemWidth) ) {
@@ -31,7 +30,7 @@ function prev(){
 }
 
 function addActiveClass(item){
-    listItem.forEach( item => item.classList.remove('active'))
+    listItem.forEach( item => item.classList.remove('active') )
     if (item < (listItem.length ) ) {
         listItem[item].classList.add('active')
     }
@@ -52,7 +51,37 @@ const fullSlideMain = document.querySelector('.slide-main')
 const fullSlideMainItem = fullSlideMain.querySelectorAll('.slide-item')
 const fullSldeMainControlActive = document.querySelector('#full-slide-active')
 const fullSldeMainControlTotal = document.querySelector('#full-slide-total')
+const fullSldeMainLine = document.querySelectorAll('.line')
+let controlFullSlide = 0;
 
+function changeFullSlide(){
+    setInterval( ()=> {
+        nextFullSlide()
+    }, 5000)
+}
 
-fullSldeMainControlActive.innerHTML = '01'
-fullSldeMainControlTotal.innerHTML = '0' + fullSlideMainItem.length 
+function nextFullSlide(){
+    fullSlideMainItem.forEach( item => item.classList.remove('active') )
+    fullSldeMainLine.forEach( item => item.classList.remove('active') )
+    if( controlFullSlide < fullSlideMainItem.length - 1 ) {
+        controlFullSlide++
+        fullSldeMainLine[controlFullSlide].classList.add('active')
+        fullSlideMainItem[controlFullSlide].classList.add('active')
+        fullSldeMainControlActive.innerHTML = controlFullSlide + 1
+    } else {
+        controlFullSlide = 0
+        fullSlideMainItem[0].classList.add('active')
+        fullSldeMainControlActive.innerHTML = 1
+        fullSldeMainLine[0].classList.add('active')
+    }
+}
+
+function initFullSlide (){
+    fullSldeMainControlActive.innerHTML = 1
+    fullSldeMainControlTotal.innerHTML = fullSlideMainItem.length 
+    fullSlideMainItem[0].classList.add('active')
+    fullSldeMainLine[0].classList.add('active')
+    changeFullSlide()
+}
+
+initFullSlide()
